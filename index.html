@@ -1,0 +1,1618 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EBS · 불꽃과 확인 퀴즈</title>
+<style>
+:root{font-family:Arial,'Malgun Gothic',sans-serif;color:#202020;background:#fff;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;color:inherit}button:focus-visible,input:focus-visible{outline:3px solid #555;outline-offset:4px}button{border:1px solid #ccc;background:white;border-radius:8px;transition:background .2s,transform .2s,border-color .2s}button:hover{background:#eee;border-color:#555}button:active{transform:scale(.975)}button:disabled{opacity:.4;cursor:default}.shell{--top-row-height:204px;--top-row-gap:40px;max-width:1200px;margin:0 auto;padding:44px 40px 60px}.brand{text-align:center;font-size:38px;font-weight:800;letter-spacing:-2px;margin:4px 0 46px}.brand small{display:block;font-size:12px;font-weight:400;letter-spacing:3px;margin-top:8px;color:#777}.screen{animation:enter .5s cubic-bezier(.2,.7,.2,1) both}.extra{border:1px dashed #ba3333!important;position:relative}.extra-label{display:table;font-size:10px;letter-spacing:0;color:#923131;background:#fff;padding:2px 6px;border:1px dashed #ba3333;border-radius:3px;line-height:1.4;margin-bottom:9px}.muted{color:#777}.eyebrow{font-size:12px;letter-spacing:2px;color:#777}.primary{background:#242424;color:white;border-color:#242424;padding:14px 22px;font-weight:bold}.primary:hover{background:#444;color:#fff}.ghost{padding:12px 20px}.block-title{font-size:21px;margin:0 0 22px;font-weight:600}.placeholder{background:#e6e6e6;border:1px solid #d2d2d2}.home-top{position:relative}.content-row,.learning-row{height:var(--top-row-height);margin:0 0 var(--top-row-gap)}.content-row{display:grid;grid-template-columns:.75fr 1.65fr 1fr 1fr 1fr 1fr;gap:18px}.content-card{display:flex;flex-direction:column;padding:12px;align-items:center;justify-content:center;gap:14px;border-radius:18px;background:#f5f5f5}.content-card:nth-child(2){background:#e6e6e6}.card-symbol{font-size:35px;font-weight:300;line-height:1}.content-card span:last-child{font-size:14px}.home-bottom{display:grid;grid-template-columns:2.25fr 1fr;gap:44px}.banner{min-height:320px;border-radius:20px}.shortcuts{padding:25px;border:1px solid #aaa;border-radius:17px;display:flex;flex-direction:column}.shortcuts button{border:0;border-top:1px solid #ddd;border-radius:0;text-align:left;padding:18px 0}.shortcuts button:last-child{padding-bottom:0}.learning-row{display:grid;grid-template-columns:82px 1fr 1.1fr 92px;gap:20px;align-items:stretch}.back-box{font-size:27px;background:#f5f5f5}.lecture-card{padding:20px;position:relative;border:1px solid #bbb;border-radius:16px}.lecture-card .mini-image{width:65px;height:83px;float:right;margin:0 0 10px 15px;border-radius:4px}.lecture-card h2{font-size:19px;line-height:1.5;margin:8px 0}.lecture-card p{font-size:14px;margin:8px 0 16px;color:#666}.lecture-card .primary{font-size:14px;padding:11px 15px}.expand{font-size:32px;background:#f5f5f5}.learning-bottom{display:grid;grid-template-columns:.8fr 1.4fr;gap:42px;align-items:start}.records{border:1px solid #bbb;border-radius:20px;padding:23px}.record-head{display:flex;gap:15px;align-items:center}.record-face{font-size:38px}.records p{font-size:14px}.metrics{display:flex;justify-content:space-between;border-top:1px solid #ddd;padding-top:18px;margin-top:20px}.metrics b{display:block;font-size:25px;margin:7px 0}.metrics span{font-size:13px;color:#777}.player-shell{max-width:1440px;margin:auto;padding:24px}.player-layout{display:grid;grid-template-columns:1.7fr 1fr;border:1px solid #bbb;min-height:calc(100vh - 48px)}.video-column{min-width:0;display:flex;flex-direction:column}.video-stage{background:#dedede;flex:1;min-height:430px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.player-controls{border-top:1px solid #aaa;padding:14px 20px;display:flex;gap:15px;align-items:center;background:#f7f7f7;flex-wrap:wrap}.player-controls button{padding:8px 12px;font-size:13px}.video-info{padding:25px;border-top:1px solid #bbb;min-height:190px}.video-info h1{font-size:21px;line-height:1.6;margin:0 0 8px}.video-info p{font-size:14px;color:#666}.book-panel{border-left:1px solid #bbb;display:flex;flex-direction:column;padding:28px;gap:22px}.book-panel h2{font-size:22px;margin:0}.book-cover{flex:1;min-height:310px;border-radius:3px;position:relative}.book-cover:before{content:'';position:absolute;left:10px;top:0;height:100%;border-left:1px solid #ccc}.book-panel .primary{width:100%}.book-detail{padding:22px;background:white;line-height:1.9;animation:unfold .35s ease both}.book-detail h3{font-size:20px}.book-detail p{font-size:15px}.book-pages{display:flex;align-items:center;justify-content:space-between;gap:10px}.book-pages button{padding:10px}.overlay{position:fixed;inset:0;background:#0005;display:flex;align-items:center;justify-content:center;padding:24px;z-index:20;animation:enter .25s ease}.dialog{max-width:460px;width:100%;background:#fff;border-radius:15px;padding:30px;box-shadow:0 20px 60px #0002}.dialog h2{font-size:26px;margin:13px 0}.dialog p{font-size:15px;line-height:1.8}.dialog .primary{width:100%;margin-top:15px}#toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,25px);background:#282828;color:#fff;border-radius:9px;padding:13px 24px;opacity:0;pointer-events:none;z-index:50;transition:.22s}#toast.visible{opacity:1;transform:translate(-50%,0)}[hidden]{display:none!important}@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes unfold{from{opacity:0;transform:scaleY(.94) translateY(-8px)}to{opacity:1;transform:scaleY(1) translateY(0)}}@keyframes breathe{50%{transform:translateY(-5px) rotate(1deg)}}@keyframes wave{30%{transform:rotate(-7deg) translateY(-9px)}65%{transform:rotate(5deg) translateY(-6px)}}
+@media(min-width:1350px){.shell{padding-left:75px;padding-right:75px}}
+@media(max-width:700px){.shell{--top-row-height:244px;--top-row-gap:25px;padding:26px 22px 35px}.brand{font-size:31px;margin:3px 0 32px}.brand small{font-size:10px}.content-row{gap:9px;grid-template-columns:.75fr 1.65fr 1fr;grid-auto-rows:1fr}.content-card{border-radius:12px;padding:8px;gap:10px}.content-card span:last-child{font-size:12px}.card-symbol{font-size:28px}.home-bottom{gap:15px;grid-template-columns:1.7fr 1fr}.banner{min-height:240px;border-radius:13px}.shortcuts{padding:14px;border-radius:13px}.block-title{font-size:16px;margin-bottom:13px}.shortcuts button{font-size:12px;padding:15px 0}.learning-row{grid-template-columns:37px 1fr 1fr 37px;gap:7px}.lecture-card{padding:10px;border-radius:10px}.lecture-card h2{font-size:13px}.lecture-card p{font-size:11px}.lecture-card .mini-image{float:none;width:27px;height:32px;margin:0}.lecture-card .primary{padding:8px;font-size:11px}.back-box{font-size:20px}.expand{font-size:23px}.learning-bottom{gap:15px;grid-template-columns:.9fr 1.3fr}.records{padding:12px;border-radius:13px}.record-head{display:block}.record-face{font-size:28px}.records p{font-size:11px}.metrics{gap:6px;flex-wrap:wrap;margin-top:12px;padding-top:10px}.metrics b{font-size:18px}.metrics span{font-size:10px}.extra-label{font-size:9px;padding:2px 4px;margin-bottom:6px}.player-shell{padding:12px}.player-layout{grid-template-columns:1.7fr 1fr;min-height:calc(100vh - 24px)}.video-stage{min-height:290px}.player-controls{padding:10px;gap:8px}.player-controls button{padding:7px;font-size:10px}.video-info{padding:14px;min-height:180px}.video-info h1{font-size:14px}.video-info p{font-size:11px}.book-panel{padding:13px;gap:14px}.book-panel h2{font-size:17px}.book-cover{min-height:220px}.book-panel .primary{font-size:12px;padding:11px 5px}.book-detail{padding:10px;line-height:1.6}.book-detail h3{font-size:13px}.book-detail p{font-size:11px}.book-pages{flex-wrap:wrap;font-size:11px}.book-pages button{font-size:10px;padding:6px}.dialog{padding:24px}}
+
+.learning-top { position: relative; margin-bottom: var(--top-row-gap); }
+.learning-top .learning-row { margin-bottom: 0; }
+.course-panel {
+  margin-top: 20px;
+  animation: enter .3s cubic-bezier(.2,.7,.2,1) both;
+}
+.course-filter {
+  position: absolute;
+  inset-inline: 0;
+  bottom: calc(100% + 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  animation: filter-arrive .32s cubic-bezier(.2,.7,.2,1) both;
+}
+.course-filter .extra-label { margin: 0 5px 0 0; }
+.course-filter button {
+  min-height: 30px;
+  padding: 4px 12px;
+  border-color: transparent;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #f5f5f5;
+}
+.course-filter button[aria-pressed="true"] { background: #313131; color: white; }
+@keyframes filter-arrive {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.course-pair {
+  display: grid;
+  grid-template-columns: minmax(0,2fr) minmax(0,3fr);
+  align-items: stretch;
+  min-height: var(--top-row-height);
+  gap: 20px;
+}
+.course-pair:nth-child(even) {
+  grid-template-columns: minmax(0,3fr) minmax(0,2fr);
+}
+.course-results { display: grid; grid-auto-rows: 1fr; gap: 12px; }
+.course-pair .lecture-card { min-width: 0; overflow-wrap: anywhere; }
+.book-select { position: absolute; inset: 0; width: 100%; border: 0; border-radius: inherit; background: transparent; }
+.book-select:hover { background: #00000008; }
+html { scrollbar-gutter: stable; }
+@media (max-width:700px) {
+  .course-filter { bottom: calc(100% + 3px); }
+  .course-filter button { min-height: 26px; padding: 2px 8px; }
+  .course-pair { gap: 9px; min-height: 155px; }
+}
+.content-card.media-card {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  perspective: 850px;
+}
+.media-card:active { transform: none; }
+.flip-inner {
+  display: grid;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .64s cubic-bezier(.26,.76,.24,1);
+}
+.media-card[aria-pressed="true"] .flip-inner { transform: rotateY(180deg); }
+@media (hover:hover) {
+  .media-card:hover .flip-inner { transform: rotateY(180deg); }
+}
+.flip-face {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-width: 0;
+  min-height: 182px;
+  border: 1px solid #ccc;
+  border-radius: inherit;
+  overflow: hidden;
+  padding: 13px;
+  text-align: left;
+  backface-visibility: hidden;
+}
+.flip-inner { border-radius: inherit; }
+.poster-front { position: relative; isolation: isolate; color: white; background: #484848; }
+.poster-front::before, .poster-front::after { content: ''; position: absolute; inset: 0; z-index: -1; }
+.poster-front::after { background: linear-gradient(transparent 30%,#111e 100%); }
+.poster-forest::before {
+  background: radial-gradient(circle at 68% 26%,#eee 0 9%,transparent 9.5%),
+    linear-gradient(155deg,transparent 49%,#414141 50% 66%,transparent 67%) 0 100% / 72% 89% no-repeat,
+    linear-gradient(213deg,transparent 43%,#606060 44% 73%,transparent 74%),
+    linear-gradient(#b5b5b5,#616161);
+}
+.poster-train::before {
+  background: radial-gradient(ellipse at 65% 34%,#eee 0 5%,#929292 6%,transparent 32%),
+    repeating-linear-gradient(112deg,#1d1d1d 0 15%,#737373 16% 18%,#3e3e3e 19% 28%);
+}
+.poster-moon::before {
+  background: radial-gradient(circle at 62% 34%,#eee 0 15%,transparent 15.5%),
+    radial-gradient(ellipse at 23% 89%,#898989 0 38%,transparent 39%),
+    linear-gradient(150deg,#222,#777);
+}
+.poster-city::before {
+  background: repeating-linear-gradient(0deg,transparent 0 8px,#454545 8px 11px) 0 0 / 100% 100%,
+    repeating-linear-gradient(110deg,#555 0 16%,#aaa 16% 21%,#3a3a3a 21% 31%);
+}
+.poster-pencil::before {
+  background: repeating-linear-gradient(130deg,transparent 0 16px,#eee 17px 20px,transparent 21px 30px),
+    radial-gradient(circle at 66% 32%,#ddd 0 16%,#777 17% 29%,#414141 30%);
+}
+.poster-front strong, .poster-back strong { font-size: 16px; line-height: 1.25; word-break: keep-all; }
+.poster-front small, .poster-back small { font-size: 11px; margin-bottom: 5px; }
+.poster-back { justify-content: center; transform: rotateY(180deg); color: #222; background: #f3f3f3; }
+.content-card .poster-back .poster-description { margin-top: 7px; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+@media (max-width:700px) {
+  .flip-face { min-height: 0; padding: 8px; }
+  .poster-front strong, .poster-back strong { font-size: 13px; }
+  .content-card .poster-back .poster-description { font-size: 11px; }
+}
+
+.lecture-card.book-card, .lecture-card.lesson-card {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) clamp(62px,24%,108px);
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(128deg,#fff 43%,#f5f5f5);
+}
+.card-copy { align-self: start; min-width: 0; }
+.card-copy p { overflow-wrap: anywhere; }
+.course-art { position: relative; display: grid; place-items: center; height: 105px; }
+.course-art::before {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 13px;
+  bottom: 6px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,#0003,transparent 70%);
+}
+.textbook {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  justify-items: start;
+  width: 61px;
+  height: 81px;
+  padding: 9px 7px 8px 12px;
+  border-radius: 3px 5px 5px 2px;
+  border: 1px solid #343434;
+  background: linear-gradient(90deg,#343434 0 9%,#777 10%,#555 14%,#505050 15%,#696969);
+  box-shadow: 2px 2px #eee, 4px 4px #aaa, 5px 6px #505050, 8px 9px 10px #0003;
+  color: white;
+  transform: perspective(250px) rotateY(-17deg) rotateZ(-8deg);
+}
+.textbook strong { font-size: 14px; }
+.textbook small { font-size: 8px; letter-spacing: .06em; }
+.textbook i {
+  width: 25px;
+  height: 21px;
+  border: 1px solid #ddd;
+  border-radius: 50% 50% 3px 50%;
+  transform: rotate(-15deg);
+}
+.lesson-object { position: relative; width: 60px; height: 60px; animation: object-float 3.8s ease-in-out infinite; }
+.lesson-object::before, .lesson-object::after { content: ''; position: absolute; }
+.object-math {
+  border: 3px solid #595959;
+  border-radius: 50%;
+  background: linear-gradient(145deg,#f7f7f7,#bfbfbf);
+  box-shadow: 3px 4px 0 #999;
+}
+.object-math::before { width: 90%; left: 5%; top: 56%; border-top: 2px solid #555; transform: rotate(-25deg); }
+.object-math::after { width: 7px; height: 7px; border-radius: 50%; background: #444; left: 45%; top: 44%; }
+.object-english::before, .object-english::after {
+  display: grid;
+  place-items: center;
+  border: 1px solid #666;
+  border-radius: 13px 13px 13px 3px;
+  width: 42px;
+  height: 30px;
+}
+.object-english::before { content: '…'; bottom: 7px; right: 0; background: #747474; color: white; }
+.object-english::after { content: '가'; top: 7px; left: 0; background: #eee; font-weight: bold; }
+.object-science {
+  width: 53px;
+  height: 49px;
+  border: 12px solid #636363;
+  border-top: 0;
+  border-radius: 0 0 24px 24px;
+  transform: rotate(-23deg);
+}
+.object-science::before, .object-science::after { top: 0; width: 12px; height: 11px; background: #c5c5c5; }
+.object-science::before { left: -12px; }
+.object-science::after { right: -12px; }
+@keyframes object-float {
+  0%,100% { translate: 0 2px; }
+  50% { translate: 0 -5px; }
+}
+@media (max-width:700px) {
+  .lecture-card.book-card, .lecture-card.lesson-card { grid-template-columns: minmax(0,1fr); grid-template-rows: auto 48px; align-content: start; gap: 3px; }
+  .course-art { height: 48px; }
+  .course-art::before { width: 65px; bottom: 0; }
+  .textbook { scale: .53; }
+  .lesson-object { scale: .63; }
+  .course-art:has(.textbook) { align-items: start; }
+  .textbook { margin-top: -16px; }
+}
+
+.streak-callout {
+  display: grid;
+  grid-template-columns: 94px minmax(0,1fr);
+  align-items: center;
+  gap: 12px;
+  min-height: 116px;
+}
+.streak-callout p { margin: 0; line-height: 1.6; }
+.streak-callout strong { display: block; margin-top: 5px; font-size: 17px; }
+.streak-art {
+  position: relative;
+  width: 94px;
+  height: 111px;
+  isolation: isolate;
+}
+.streak-art::before {
+  content: '';
+  position: absolute;
+  inset: 9px 0 11px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,#aaa7,transparent 66%);
+}
+.streak-art::after {
+  content: '';
+  position: absolute;
+  inset: auto 15px 3px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,#20202059,transparent 70%);
+  z-index: -1;
+}
+.streak-flame {
+  position: absolute;
+  inset: 0 0 6px;
+  width: 100%;
+  height: calc(100% - 6px);
+  overflow: visible;
+  transform-origin: 50% 93%;
+  filter: drop-shadow(1px 4px 4px #0003);
+}
+.streak-flame-shapes {
+  transform-origin: 55px 111px;
+  transform: skewX(var(--flame-tip-bend,0deg)) scaleY(var(--flame-tip-stretch,1));
+}
+.streak-flame-warm-shell { opacity: var(--shell-heat,0); }
+.streak-flame-warm-ember { opacity: var(--ember-heat,0); }
+.streak-flame[data-lit="true"] { --shell-heat: 1; --ember-heat: 1; }
+.streak-callout[data-lit="false"] .streak-flame { filter: drop-shadow(0 5px 5px #846fbe30); }
+@media (max-width:700px) {
+  .streak-callout { grid-template-columns: minmax(0,1fr); gap: 4px; }
+  .streak-art { justify-self: center; margin-block: -15px; --flame-button-scale: .72; }
+  .streak-callout strong { font-size: 13px; }
+}
+
+.course-art {
+  transform: perspective(350px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+  transition: transform .24s cubic-bezier(.2,.75,.28,1);
+}
+.flame-body {
+  position: absolute;
+  inset: 0;
+  transform-origin: center 88%;
+  transform: translateY(var(--lift,0px));
+  transition: transform .42s cubic-bezier(.22,.8,.25,1);
+}
+.streak-callout[data-lit="false"] .streak-art { cursor: grab; touch-action: none; user-select: none; }
+.streak-art[data-grabbing] { cursor: grabbing !important; }
+.streak-art:is([data-grabbing],[data-falling],[data-previewing]) .flame-body { transition: none; }
+.streak-art:focus-visible { outline: 2px solid #555; outline-offset: 3px; border-radius: 12px; }
+
+.mesh-host > canvas { display: block; width: 100%; height: 100%; position: absolute; inset: 0; }
+.course-art.mesh-host > canvas { inset: auto; width: min(100%,105px); height: auto; aspect-ratio: 1; }
+.mesh-host > .textbook, .mesh-host > .lesson-object { display: none; }
+@media (max-width:700px) {
+  .course-art.mesh-host > canvas { width: 56px; }
+}
+
+.shell.screen { animation-name: screen-fade; }
+@keyframes screen-fade { from { opacity: 0; } to { opacity: 1; } }
+.content-row { grid-auto-rows: minmax(0, 1fr); }
+.learning-row { grid-template-rows: minmax(0, 1fr); }
+.learning-row .lecture-card { min-width: 0; }
+.learning-row .card-copy p { margin-bottom: 11px; }
+.quiz-panel { border: 1px solid #bbb; border-radius: 20px; padding: 23px; background: #fafafa; }
+.quiz-panel .block-title { margin: 8px 0 12px; }
+.quiz-topic { color: #666; font-size: 13px; margin: 0 0 18px; }
+.quiz-panel fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+.quiz-panel legend { font-weight: 700; margin-bottom: 12px; padding: 0; line-height: 1.5; }
+.quiz-options { display: grid; gap: 8px; }
+.quiz-option { display: flex; gap: 9px; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: white; cursor: pointer; }
+.quiz-option:has(input:checked) { border-color: #444; background: #eee; }
+.quiz-option input { flex: none; accent-color: #333; }
+.quiz-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+.quiz-actions .primary { padding: 10px 14px; }
+.quiz-feedback { flex: 1 1 160px; line-height: 1.45; font-size: 14px; margin: 0; }
+@media (max-width:700px) {
+  .learning-row .lecture-card { grid-template-rows: auto 40px; }
+  .learning-row .card-copy p { margin-block: 5px 8px; }
+  .learning-bottom { grid-template-columns: minmax(0,1fr); }
+  .quiz-panel { padding: 17px; }
+}
+
+.streak-art::before { background: radial-gradient(ellipse,#b8b8b84d,transparent 68%); }
+.streak-callout[data-lit="true"] .streak-art::before {
+  background: radial-gradient(ellipse,#ffbd637a 8%,#ffc88250 41%,transparent 72%);
+  opacity: var(--flame-glow,1);
+}
+.streak-callout[data-igniting] .streak-flame { filter: drop-shadow(0 4px 5px #3335); }
+.streak-roll { display: inline-flex; align-items: baseline; vertical-align: baseline; }
+.streak-roll-window { display: inline-block; height: 1.15em; overflow: hidden; line-height: 1.15; }
+.streak-roll-wheel { display: block; transform: translateY(var(--day-roll,0%)); }
+.streak-roll-wheel > span { display: block; }
+.metrics .streak-roll, .metrics .streak-roll span { font-size: inherit; color: inherit; }
+
+.streak-callout[data-lit="true"] .streak-flame { filter: drop-shadow(0 4px 7px #f08d2a48); }
+.streak-flame-ember-shape { transform-origin: 55px 90px; }
+.streak-spark { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.streak-callout[data-lit="true"]:not([data-igniting]) .streak-flame-shell-shape {
+  animation: flame-shell-flow 1.32s cubic-bezier(.44,.05,.49,.96) infinite;
+}
+.streak-callout[data-lit="true"]:not([data-igniting]) .streak-flame-ember-shape {
+  animation: flame-inner-pulse 1.07s ease-in-out infinite alternate;
+}
+.streak-callout[data-lit="true"]:not([data-igniting]) .streak-spark {
+  animation: flame-spark-rise 1.48s ease-out var(--spark-delay,0s) infinite;
+}
+.streak-callout[data-igniting] .streak-spark {
+  animation: flame-spark-rise .64s ease-out calc(.36s + var(--spark-entry,0s)) both;
+}
+.streak-callout[data-lit="false"]:is(:hover,[data-hovering]) .streak-art:not([data-grabbing]):not([data-falling]):not([data-previewing]) .streak-flame-shell-shape {
+  animation: flame-shell-flow 1.22s ease-in-out infinite;
+}
+@keyframes flame-shell-flow {
+  0%,100% { d: path('M50 16 C54 9 62 9 66 18 C75 34 86 55 94 74 C104 96 82 111 55 111 C31 111 10 100 10 83 C10 70 10 48 10 34 C10 26 16 22 23 25 C27 27 32 31 38 35 C42 29 46 22 50 16 Z'); }
+  32% { d: path('M43 16 C47 9 55 10 59 18 C70 33 85 53 94 74 C104 96 82 111 55 111 C31 111 10 100 10 83 C10 70 10 48 9 35 C9 27 15 22 22 25 C26 27 29 31 35 35 C37 29 40 22 43 16 Z'); }
+  72% { d: path('M57 17 C62 11 69 13 73 22 C80 37 90 57 95 75 C104 96 82 111 55 111 C31 111 10 100 10 83 C10 70 11 49 12 37 C12 28 18 24 24 27 C29 29 35 34 41 39 C46 32 52 23 57 17 Z'); }
+}
+@keyframes flame-inner-pulse {
+  0% { transform: translateX(-1.8px) scale(.96,.94); }
+  100% { transform: translateX(1.5px) scale(1.035,1.06); }
+}
+@keyframes flame-spark-rise {
+  0% { opacity: 0; transform: translate(0,5px) scale(.4); }
+  18% { opacity: .95; transform: translate(0,0) scale(1); }
+  57%,100% { opacity: 0; transform: translate(var(--spark-x,6px),-16px) scale(.27); }
+}
+.streak-art {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 12px;
+  transform: scale(var(--flame-button-scale,1));
+}
+.streak-art:hover { background: transparent; }
+.streak-art:active { transform: scale(var(--flame-button-scale,1)); }
+.streak-art[data-previewing]::before,
+.streak-callout:is(:hover,[data-hovering]) .streak-art::before {
+  background: radial-gradient(ellipse,#ada1bf86,transparent 70%);
+}
+.streak-callout[data-lit="true"]:is(:hover,[data-hovering]) .streak-art::before {
+  background: radial-gradient(ellipse,#ffb75a91,transparent 70%);
+}
+.streak-hint { display: block; margin-top: 5px; color: #606060; font-size: 11px; }
+.streak-art .flame-body { pointer-events: none; }
+.quiz-reward { display: grid; justify-items: center; align-content: center; min-height: 270px; padding: 0 12px 10px; text-align: center; }
+.quiz-reward .block-title { margin: 0 0 7px; }
+.quiz-reward p { margin: 0; font-size: 14px; line-height: 1.55; }
+.quiz-reward .quiz-topic { margin-bottom: 5px; font-size: 13px; }
+.quiz-motion-stage { width: 100%; overflow: hidden; container-type: inline-size; }
+.quiz-mascot { display: block; width: min(100%,235px); height: auto; overflow: visible; margin-inline: auto; }
+.quiz-pen-flight {
+  transform-origin: 0 -32px;
+  --pen-entry-x: max(115px,calc(50cqw - 12px));
+  --pen-dive-x: min(-145px,calc(-50cqw - 60px));
+  --pen-dive-y: 69px;
+  --pen-dive-angle: -422deg;
+  --pen-dive-opacity: 0;
+}
+.quiz-reward-complete .quiz-pen-flight {
+  --pen-dive-x: 0px;
+  --pen-dive-y: 0px;
+  --pen-dive-angle: -360deg;
+  --pen-dive-opacity: 1;
+}
+.quiz-stroke { transform-origin: 120px 81px; }
+.quiz-pen-sparks { transform-origin: 151px 62px; }
+.quiz-reward-enter .quiz-pen-flight { animation: quiz-pen-somersault var(--quiz-motion-time,920ms) linear both; }
+.quiz-reward-enter .quiz-stroke { animation: quiz-check-pop var(--quiz-motion-time,920ms) ease-out both; }
+.quiz-reward-enter .quiz-pen-sparks { animation: quiz-impact-sparks var(--quiz-motion-time,920ms) ease-out both; }
+.quiz-reward-enter .quiz-reward-copy { animation: quiz-arrive .18s ease-out .43s both; }
+.quiz-question-arrive { animation: quiz-arrive .18s cubic-bezier(.2,.72,.26,1) both; }
+@keyframes quiz-pen-somersault {
+  0% { transform: translate(var(--pen-entry-x),35px) rotate(14deg); opacity: 0; animation-timing-function: cubic-bezier(.15,.78,.32,1); }
+  13% { transform: translate(80px,21px) rotate(5deg) scale(1.07,.88); opacity: 1; animation-timing-function: cubic-bezier(.2,.75,.48,1); }
+  33% { transform: translate(30px,-26px) rotate(-222deg); opacity: 1; animation-timing-function: cubic-bezier(.45,0,.84,.39); }
+  47% { transform: translate(0,2px) rotate(-367deg) scale(1.06,.91); opacity: 1; animation-timing-function: ease-out; }
+  58%, 68% { transform: translate(0,0) rotate(-360deg); opacity: 1; animation-timing-function: cubic-bezier(.46,.04,.84,.39); }
+  100% { transform: translate(var(--pen-dive-x),var(--pen-dive-y)) rotate(var(--pen-dive-angle)); opacity: var(--pen-dive-opacity); }
+}
+@keyframes quiz-check-pop {
+  0%, 45% { opacity: 0; transform: scale(.48); }
+  54% { opacity: 1; transform: scale(1.2); }
+  64%, 100% { opacity: 1; transform: scale(1); }
+}
+@keyframes quiz-impact-sparks {
+  0%, 45% { opacity: 0; transform: scale(.4); }
+  54% { opacity: 1; transform: scale(1); }
+  80%, 100% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes quiz-arrive {
+  from { opacity: 0; transform: translate(12px,3px); }
+  to { opacity: 1; transform: translate(0,0); }
+}
+
+.player-layout { overflow: hidden; border-radius: 14px; }
+.video-stage.example-stage { isolation: isolate; background: #242424 linear-gradient(145deg,#414141,#151515); color: white; }
+.example-thumbnail, .example-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.example-thumbnail { object-fit: cover; object-position: center; }
+.example-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: end; align-items: start;
+  gap: 6px; padding: clamp(14px,3vw,32px);
+  background: linear-gradient(transparent 12%,#1118 49%,#111e 100%);
+}
+.example-overlay .extra-label { margin-bottom: 4px; }
+.example-overlay p { font-size: 13px; margin: 0; }
+.example-overlay strong { font-size: clamp(23px,3.2vw,42px); line-height: 1.15; }
+.example-overlay > span:not(.extra-label) { font-size: clamp(11px,1.15vw,14px); }
+.example-play {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-top: 9px; padding: 10px 14px;
+  background: white; color: #202020; border: 0; border-radius: 8px;
+  font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.example-play:hover { background: #e4e4e4; }
+.example-play:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.player-controls { gap: 9px 14px; padding: 9px 15px; }
+.player-controls .extra-label { margin: 0; }
+.player-controls a { color: #333; font-weight: 600; font-size: 12px; }
+.player-controls .primary { margin-left: auto; padding: 8px 13px; }
+.video-info { display: flex; gap: 10px; justify-content: space-between; align-items: center; min-height: 0; padding: 13px 16px; }
+.video-info h1 { margin-bottom: 4px; font-size: clamp(14px,1.6vw,20px); line-height: 1.35; }
+.video-info p { margin: 0; }
+.video-info .ghost { flex: none; padding: 8px 10px; font-size: 12px; }
+.video-info .ghost .extra-label { margin: 0 auto 3px; }
+.book-heading { display: flex; align-items: center; gap: 10px; }
+.book-heading .extra-label { margin: 0; }
+.video-sync-status { color: #666; font-size: 12px; line-height: 1.35; margin: 0; }
+.book-panel { gap: 12px; padding: 16px; }
+#player-book-content { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 12px; }
+.book-cover { flex: 1; min-height: 0; border: 1px solid #d4d4d4; overflow: auto; }
+.book-is-closed { display: grid; place-items: center; padding: 14px; background: #ededed; }
+.book-is-open { background: white; overscroll-behavior: contain; }
+.book-jacket {
+  position: relative; display: grid; align-content: space-between; gap: 8px;
+  width: min(100%,245px); min-height: min(100%,245px); padding: 16px 17px;
+  border-left: 6px solid #555; border-radius: 4px 10px 10px 4px;
+  background: #e2e2e2; color: #242424; box-shadow: 3px 4px #b2b2b2, 8px 9px 16px #0002;
+}
+.book-jacket strong { font-size: clamp(18px,2.4vw,27px); line-height: 1.15; }
+.book-jacket > span { font-size: 12px; }
+.book-landscape { width: 100%; max-height: 65px; }
+.book-detail { padding: clamp(11px,1.5vw,20px); line-height: 1.55; }
+.book-detail h3 { margin: 2px 0 14px; }
+.book-chapter { margin: 0 0 6px; color: #666; }
+.book-detail dl { margin: 0; font-size: 14px; }
+.book-detail dt { font-weight: 700; }
+.book-detail dd { margin: 0 0 9px; }
+.book-detail .book-prompt { border-top: 1px solid #d8d8d8; padding-top: 10px; }
+.book-toolbar { display: grid; flex: none; gap: 8px; }
+.book-toolbar .primary { padding: 10px 12px; }
+.book-pages button { padding: 6px 10px; font-size: 13px; }
+
+@media (min-width:701px) {
+  .player-shell { height: 100vh; height: 100dvh; padding: clamp(8px,2vw,22px); }
+  .player-layout {
+    height: 100%; min-height: 0;
+    grid-template-columns: minmax(0,1.85fr) minmax(240px,1fr);
+    grid-template-rows: minmax(0,1fr);
+  }
+  .video-column { display: grid; grid-template-rows: minmax(0,1fr) auto auto; min-height: 0; }
+  .video-stage.example-stage, .book-panel { min-height: 0; min-width: 0; }
+}
+@media (min-width:701px) and (max-height:620px) {
+  .player-shell { padding: 8px; }
+  .player-controls, .video-info { padding-block: 7px; }
+  .book-panel { padding: 12px; gap: 8px; }
+  #player-book-content { gap: 8px; }
+  .book-is-closed { padding: 9px; }
+}
+@media (max-width:700px) {
+  .player-layout { grid-template-columns: minmax(0,1fr); min-height: 0; }
+  .video-stage.example-stage { min-height: 250px; }
+  .video-info { flex-wrap: wrap; }
+  .book-panel { border-left: 0; border-top: 1px solid #bbb; }
+  .book-cover { min-height: 220px; }
+}
+</style>
+</head>
+<body>
+<main id="app"></main><div id="toast" role="status" aria-live="polite"></div><div id="modal"></div>
+<script>
+const courses=[{title:'중학 수학 마스터 개념 3-2',subject:'수학',lesson:'원과 현, 원만큼 중요한 도형이 또 있을까?',chapter:19,teacher:'정승제',duration:30},{title:'중학 영어 문법 2',subject:'영어',lesson:'현재완료의 의미와 쓰임',chapter:8,teacher:'정승익',duration:25},{title:'중학 과학 개념 3',subject:'과학',lesson:'전류와 자기장의 관계',chapter:12,teacher:'안현정',duration:28}];
+const state={screen:'home',selected:0,expanded:false,subject:'',book:false,page:1,completed:new Set(),ignitePending:false,quizAnswered:new Map(),quizReview:new Set()};
+const app=document.querySelector('#app');const modal=document.querySelector('#modal');const label='<span class="extra-label">스케치 외 요소</span>';let toastTimer;
+function toast(text='미구현'){const t=document.querySelector('#toast');t.textContent=text;t.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('visible'),1800)}
+function logo(){return '<header class="brand">EBS</header>'}
+function go(screen){if(state.screen==='player')disposeExampleVideo();state.screen=screen;render();window.scrollTo({top:0,behavior:'instant'})}
+const homeMedia = [
+  { category: '다큐멘터리', title: '숲이 깨어나는 시간', art: 'forest', description: '새벽 안개가 걷히는 산골에서 숲의 하루를 따라갑니다.' },
+  { category: '영화', title: '마지막 기차', art: 'train', description: '막차를 놓친 두 사람이 낯선 역에서 하룻밤을 보냅니다.' },
+  { category: '애니메이션', title: '달의 정원', art: 'moon', description: '작은 토끼가 달빛 아래에서 사라진 씨앗을 찾아 나섭니다.' },
+  { category: '교양', title: '도시의 뒷면', art: 'city', description: '매일 지나치는 골목과 건물에 담긴 이야기를 살펴봅니다.' },
+  { category: '어린이', title: '연필 탐험대', art: 'pencil', description: '친구들과 함께 그림을 그리고 신나는 모험을 떠나요.' }
+];
+
+function homeMediaCards() {
+  return homeMedia.map(({ category, title, art, description }, index) => `
+    <button class="content-card media-card" type="button" aria-label="${category} · ${title} 설명" aria-describedby="media-description-${index}" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') !== 'true')">
+      <span class="flip-inner">
+        <span class="flip-face poster-front poster-${art}" aria-hidden="true">
+          <small>${category}</small>
+          <strong>${title}</strong>
+        </span>
+        <span class="flip-face poster-back">
+          <small>${category}</small>
+          <strong>${title}</strong>
+          <span class="poster-description" id="media-description-${index}">${description}</span>
+        </span>
+      </span>
+    </button>`).join('');
+}
+
+function home(){return `<div class="shell screen">${logo()}<section class="home-top" aria-label="콘텐츠"><div class="content-row extra">${label}<style>.content-row>.extra-label{position:absolute;top:-22px;left:0}</style><button class="content-card" onclick="go('learn')"><span class="card-symbol" aria-hidden="true">▤</span><span>학습</span></button>${homeMediaCards()}</div></section><section class="home-bottom"><div class="banner placeholder" role="img" aria-label="배너 이미지 자리"></div><aside class="shortcuts"><h1 class="block-title">바로가기</h1><div class="extra" style="padding:10px">${label}<button onclick="toast()">편성표</button><button onclick="toast()">방송 프로그램</button><button onclick="go('learn')">강의 학습</button></div></aside></section></div>`}
+function courseCards(index, inPanel = false, reversed = false) {
+  const course = courses[index];
+  const object = ['math', 'english', 'science'][index];
+  const bookAction = inPanel ? `<button class="book-select" aria-label="${course.title} 선택" onclick="chooseBook(${index})"></button>` : '';
+  const lectureAction = inPanel ? `openCourse(${index})` : "go('player')";
+  const bookCard = `
+    <article class="lecture-card extra book-card">
+      <div class="card-copy">
+        ${label}
+        <h2>${course.title}</h2>
+        <p>${course.chapter}강 · ${course.subject}</p>
+      </div>
+      <div class="course-art" data-model="book" data-cover="${course.subject}" aria-hidden="true">
+        <span class="textbook"><strong>${course.subject}</strong><i></i><small>중학 개념</small></span>
+      </div>
+      ${bookAction}
+    </article>`;
+  const lessonCard = `
+    <article class="lecture-card extra lesson-card">
+      <div class="card-copy">
+        ${label}
+        <h2>강의 학습 중</h2>
+        <p>${course.chapter}강 ${course.lesson}</p>
+        <button class="primary" onclick="${lectureAction}">이어서 학습</button>
+      </div>
+      <div class="course-art" data-model="${object}" aria-hidden="true"><span class="lesson-object object-${object}"></span></div>
+    </article>`;
+  return reversed ? lessonCard + bookCard : bookCard + lessonCard;
+}
+
+const subjects = ['', ...new Set(courses.map(course => course.subject))];
+
+function courseResults() {
+  const visible = courses
+    .map((course, index) => ({ subject: course.subject, index }))
+    .filter(course => !state.subject || course.subject === state.subject);
+  return visible.map(({ index }, row) =>
+    `<div class="course-pair">${courseCards(index, true, row % 2 === 1)}</div>`
+  ).join('');
+}
+
+function courseFilter() {
+  return `
+    <div class="course-filter" id="courseFilter" role="group" aria-label="과목 필터" ${state.expanded ? '' : 'hidden'}>
+      ${label}
+      ${subjects.map((subject, index) => `<button type="button" data-filter="${index}" aria-pressed="${subject === state.subject}" onclick="filterCourses(${index})">${subject || '전체'}</button>`).join('')}
+    </div>`;
+}
+
+function coursePanel() {
+  return `
+    <section class="course-panel" id="coursePanel" aria-label="강의 선택" ${state.expanded ? '' : 'hidden'}>
+      <div class="course-results" id="courseResults">${courseResults()}</div>
+    </section>`;
+}
+
+function streakIllustration(lit) {
+  const shell = 'M50 16 C54 9 62 9 66 18 C75 34 86 55 94 74 C104 96 82 111 55 111 C31 111 10 100 10 83 C10 70 10 48 10 34 C10 26 16 22 23 25 C27 27 32 31 38 35 C42 29 46 22 50 16 Z';
+  const ember = 'M52 50 C54 46 57 46 59 50 C64 59 72 75 74 82 C79 95 69 104 55 104 C41 104 33 96 36 86 C38 77 47 59 52 50 Z';
+  return `
+    <span class="flame-body">
+      <svg class="streak-flame" data-lit="${lit}" viewBox="0 0 108 130" aria-hidden="true">
+        <g transform="translate(0 15)">
+          <g class="streak-flame-shapes">
+            <path class="streak-flame-shell-shape" d="${shell}" fill="#d8ccec"/>
+            <path class="streak-flame-shell-shape streak-flame-warm-shell" d="${shell}" fill="#f58225"/>
+            <g class="streak-flame-ember-shape">
+              <path d="${ember}" fill="#f1e9fa"/>
+              <path class="streak-flame-warm-ember" d="${ember}" fill="#ffc33b"/>
+            </g>
+          </g>
+        </g>
+        <g fill="#f79329">
+          <path class="streak-spark" style="--spark-delay:0s;--spark-entry:0s;--spark-x:-6px" d="M33 18l6 6a2 2 0 0 1 0 3l-6 6a2 2 0 0 1-3 0l-6-6a2 2 0 0 1 0-3l6-6a2 2 0 0 1 3 0Z"/>
+          <path class="streak-spark" style="--spark-delay:.31s;--spark-entry:.12s;--spark-x:3px" d="M47 11l3.5 3.5a1.2 1.2 0 0 1 0 1.7L47 19.7a1.2 1.2 0 0 1-1.7 0l-3.5-3.5a1.2 1.2 0 0 1 0-1.7l3.5-3.5a1.2 1.2 0 0 1 1.7 0Z"/>
+        </g>
+      </svg>
+    </span>`;
+}
+
+function streakCallout() {
+  const lit = state.completed.size > 0;
+  return `
+    <div class="streak-callout" data-lit="${lit}" onpointerenter="showFlameHover(event)" onpointerleave="this.removeAttribute('data-hovering')">
+      <button type="button" class="streak-art" aria-label="불꽃 움직임 보기" onclick="activateFlame(this)" title="${lit ? '눌러서 움직임 보기' : '눌러서 움직임 보기 · 위로 끌어서 들어 올리기'}">
+        ${streakIllustration(lit)}
+      </button>
+      <p>연속 학습 불꽃<strong>${lit ? '오늘의 불꽃을 켰어요!' : '강의 한 편으로 불꽃을 켜요.'}</strong><small class="streak-hint" role="status">${lit ? '오늘도 연속 학습 성공' : '불꽃을 눌러 움직여 보세요'}</small></p>
+    </div>`;
+}
+
+const quizzes = [
+  {
+    question: '원의 중심에서 현에 수선을 내리면, 수선과 현이 만나는 점은?',
+    choices: ['현의 중점', '현의 한쪽 끝점', '원의 중심'],
+    correct: 0,
+    explanation: '원의 중심에서 현에 내린 수선은 현을 이등분해요.'
+  },
+  {
+    question: '현재완료의 형태로 알맞은 것은?',
+    choices: ['과거형 + 원형', 'have 또는 has + 과거분사', 'be + 동사원형'],
+    correct: 1,
+    explanation: '현재완료는 have 또는 has 뒤에 과거분사를 써요.'
+  },
+  {
+    question: '도선에 흐르는 전류의 방향을 바꾸면 자기장은 어떻게 될까요?',
+    choices: ['방향이 그대로예요.', '완전히 사라져요.', '방향이 반대로 바뀌어요.'],
+    correct: 2,
+    explanation: '전류의 방향이 반대로 바뀌면 자기장의 방향도 반대로 바뀌어요.'
+  }
+];
+
+const followUpQuizzes = [
+  {
+    question: '반지름이 5cm인 원에서 중심과 현 사이의 거리가 3cm예요. 현의 길이는?',
+    choices: ['4cm', '6cm', '8cm'],
+    correct: 2,
+    explanation: '현의 절반은 √(5² − 3²) = 4cm이므로, 현의 길이는 8cm예요.'
+  },
+  {
+    question: '“나는 이 책을 읽어 본 적이 있다”에 알맞은 문장은?',
+    choices: ['I have read this book.', 'I am read this book.', 'I have reads this book.'],
+    correct: 0,
+    explanation: '경험을 말할 때는 have 뒤에 과거분사 read를 써요.'
+  },
+  {
+    question: '같은 도선에서 전류를 더 세게 흘리면 주변 자기장은 어떻게 되나요?',
+    choices: ['더 약해져요.', '더 강해져요.', '크기가 그대로예요.'],
+    correct: 1,
+    explanation: '같은 조건에서는 도선에 흐르는 전류가 클수록 자기장이 강해져요.'
+  }
+];
+const quizSets = quizzes.map((first,index) => [first,followUpQuizzes[index]]);
+
+function quizCount() {
+  return [...state.quizAnswered.values()].reduce((sum,count) => sum+count,0);
+}
+
+function quizCelebration(quiz, count, total, animate = false) {
+  const complete = count === total;
+  return `${label}
+    <div class="quiz-reward${animate ? ' quiz-reward-enter' : ''}${complete ? ' quiz-reward-complete' : ''}">
+      <div class="quiz-motion-stage"><svg viewBox="0 -64 240 210" class="quiz-mascot" aria-hidden="true">
+        <ellipse cx="120" cy="132" rx="69" ry="5" fill="#e7e7e7"/>
+        <rect x="53" y="39" width="115" height="87" rx="12" fill="#e0e0e0"/>
+        <rect x="53" y="34" width="115" height="87" rx="12" fill="white" stroke="#c7c7c7" stroke-width="2"/>
+        <path d="M67 51h34m-34 9h18" fill="none" stroke="#d0d0d0" stroke-width="3" stroke-linecap="round"/>
+        <path class="quiz-stroke" d="M92 80l20 19 39-37" pathLength="1" fill="none" stroke="#333" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="quiz-pen-sparks" fill="none" stroke="#777" stroke-width="2.5" stroke-linecap="round">
+          <path d="M170 59l8-4m-12 16h10M141 32v-7m-3 4h6"/>
+        </g>
+        <g transform="translate(151 62)">
+          <g class="quiz-pen-flight">
+            <g transform="rotate(32)" stroke="#303030" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M-10-18v-45a8 8 0 0 1 8-8h4a8 8 0 0 1 8 8v45L0 0Z" fill="#e5e5e5"/>
+              <path d="M-10-59v-4a8 8 0 0 1 8-8h4a8 8 0 0 1 8 8v4Z" fill="#a8a8a8"/>
+              <path d="M-10-18h20m-13 12 3 6 3-6" fill="#333"/>
+              <path d="M-5-43q2-3 4 0m3 0q2-3 4 0m-8 6q3 4 6 0" fill="none" stroke-width="1.6"/>
+              <path d="M-10-32q-8 1-10-6m30 6q8 0 11-7" fill="none"/>
+            </g>
+          </g>
+        </g>
+      </svg></div>
+      <div class="quiz-reward-copy">
+        <p class="quiz-topic">${count} / ${total} 문제 정답</p>
+        <h2 class="block-title" id="quiz-title" tabindex="-1">${complete ? '오늘의 퀴즈 완료!' : '정답이에요!'}</h2>
+        ${complete ? `<p>${quiz.explanation}</p>` : ''}
+      </div>
+    </div>`;
+}
+
+function quizContent(enter = false) {
+  const course = courses[state.selected];
+  const set = quizSets[state.selected];
+  const count = state.quizAnswered.get(state.selected) || 0;
+  if (state.quizReview.has(state.selected)) return quizCelebration(set[count-1],count,set.length);
+  const quiz = set[count];
+  return `${label}
+    <div class="${enter ? 'quiz-question-arrive' : ''}">
+      <h2 class="block-title" id="quiz-title" tabindex="-1">오늘의 확인 퀴즈</h2>
+      <p class="quiz-topic">${course.subject} · ${course.chapter}강 · ${count+1} / ${set.length} 문제</p>
+      <form onsubmit="checkQuiz(event)">
+        <fieldset>
+          <legend id="quiz-question" tabindex="-1">${quiz.question}</legend>
+          <div class="quiz-options">
+            ${quiz.choices.map((choice,index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" required><span>${choice}</span></label>`).join('')}
+          </div>
+        </fieldset>
+        <div class="quiz-actions">
+          <button class="primary" type="submit">정답 확인</button>
+          <p class="quiz-feedback" id="quiz-feedback" role="status"></p>
+        </div>
+      </form>
+    </div>`;
+}
+
+function dailyQuiz() {
+  return `<section class="quiz-panel extra" id="quiz-panel" aria-labelledby="quiz-title">${quizContent()}</section>`;
+}
+
+function checkQuiz(event) {
+  event.preventDefault();
+  const answer = new FormData(event.currentTarget).get('answer');
+  const courseIndex = state.selected;
+  if (answer === null || state.quizReview.has(courseIndex)) return;
+  const set = quizSets[courseIndex];
+  const count = state.quizAnswered.get(courseIndex) || 0;
+  const quiz = set[count];
+  if (!quiz) return;
+  if (Number(answer) !== quiz.correct) {
+    document.querySelector('#quiz-feedback').textContent = '다시 한 번 생각해 보세요.';
+    return;
+  }
+
+  state.quizAnswered.set(courseIndex,count+1);
+  state.quizReview.add(courseIndex);
+  document.querySelector('#quiz-count').textContent = quizCount();
+  const panel = document.querySelector('#quiz-panel');
+  panel.innerHTML = quizCelebration(quiz,count+1,set.length,true);
+  panel.querySelector('#quiz-title').focus({ preventScroll: true });
+  scheduleQuizAdvance(panel);
+}
+
+const quizAdvanceDelay = 920;
+let quizAdvanceTimer;
+let quizAdvanceRevision = 0;
+
+function scheduleQuizAdvance(panel) {
+  clearTimeout(quizAdvanceTimer);
+  const revision = ++quizAdvanceRevision;
+  const courseIndex = state.selected;
+  const count = state.quizAnswered.get(courseIndex) || 0;
+  if (!panel || state.screen !== 'learn' || state.expanded ||
+      !state.quizReview.has(courseIndex) || count >= quizSets[courseIndex].length) {
+    return;
+  }
+  panel.style.setProperty('--quiz-motion-time',`${quizAdvanceDelay}ms`);
+  quizAdvanceTimer = setTimeout(() => advanceQuiz(panel,courseIndex,revision),quizAdvanceDelay+100);
+}
+
+document.addEventListener('animationend', event => {
+  if (event.animationName !== 'quiz-pen-somersault') return;
+  const panel = event.target.closest('#quiz-panel');
+  const count = state.quizAnswered.get(state.selected) || 0;
+  if (!panel || !state.quizReview.has(state.selected) || count >= quizSets[state.selected].length) return;
+  advanceQuiz(panel,state.selected,quizAdvanceRevision);
+});
+
+function advanceQuiz(panel, courseIndex, revision) {
+  if (revision !== quizAdvanceRevision || !panel.isConnected ||
+      state.selected !== courseIndex || state.screen !== 'learn' || state.expanded) return;
+  clearTimeout(quizAdvanceTimer);
+  quizAdvanceRevision++;
+  const focusWasInQuiz = panel.contains(document.activeElement);
+  state.quizReview.delete(courseIndex);
+  panel.innerHTML = quizContent(true);
+  if (focusWasInQuiz) panel.querySelector('#quiz-question').focus({ preventScroll: true });
+}
+
+function learn() {
+  return `<div class="shell screen">${logo()}
+    <div class="learning-top">
+      <section class="learning-row" aria-label="강의 학습 중">
+        <button class="back-box" aria-label="이전 화면" onclick="go('home')">‹</button>
+        ${courseCards(state.selected)}
+        <button class="expand" id="courseToggle" onclick="toggleList()" aria-label="${state.expanded ? '강의 목록 접기' : '강의 목록 펼치기'}" aria-controls="courseFilter coursePanel" aria-expanded="${state.expanded}">${state.expanded ? '−' : '+'}</button>
+      </section>
+      ${courseFilter()}
+      ${coursePanel()}
+    </div>
+    <section class="learning-bottom" id="learningBottom" ${state.expanded ? 'hidden' : ''}><article class="records"><div class="record-head"><span class="record-face" aria-hidden="true">☺</span><h2 class="block-title" style="margin:0">나의 학습 기록</h2></div><div class="extra" style="padding:12px;margin-top:19px">${label}${streakCallout()}<div class="metrics"><button style="border:0;padding:0;text-align:left" onclick="toast()"><span>미션</span><b>${state.completed.size} / 1</b></button><button style="border:0;padding:0;text-align:left" onclick="document.querySelector('#quiz-title').focus()"><span>퀴즈</span><b id="quiz-count">${quizCount()}</b></button><button style="border:0;padding:0;text-align:left" onclick="toast()"><span>연속 학습</span><b id="streak-days" aria-live="polite">${state.completed.size?1:0}일</b></button></div></div></article>${dailyQuiz()}</section></div>`}
+function toggleList() {
+  state.expanded = !state.expanded;
+  document.querySelector('#courseFilter').hidden = !state.expanded;
+  document.querySelector('#coursePanel').hidden = !state.expanded;
+  document.querySelector('#learningBottom').hidden = state.expanded;
+  scheduleQuizAdvance(app.querySelector?.('#quiz-panel'));
+  const toggle = document.querySelector('#courseToggle');
+  toggle.textContent = state.expanded ? '−' : '+';
+  toggle.setAttribute('aria-expanded', state.expanded);
+  toggle.setAttribute('aria-label', state.expanded ? '강의 목록 접기' : '강의 목록 펼치기');
+}
+
+function filterCourses(index) {
+  const previous = subjects.indexOf(state.subject);
+  document.querySelector(`[data-filter="${previous}"]`).setAttribute('aria-pressed', 'false');
+  state.subject = subjects[index];
+  document.querySelector(`[data-filter="${index}"]`).setAttribute('aria-pressed', 'true');
+  const results = document.querySelector('#courseResults');
+  results.innerHTML = courseResults();
+  mountModels(results);
+}
+
+function selectCourse(index) {
+  if (state.selected === index) return;
+  state.selected = index;
+  state.book = false;
+  state.page = 1;
+}
+
+function chooseBook(index) {
+  selectCourse(index);
+  state.expanded = false;
+  render();
+  document.querySelector('#courseToggle').focus();
+}
+
+function openCourse(index) {
+  selectCourse(index);
+  state.expanded = false;
+  go('player');
+}
+
+const exampleVideo = {
+  id: 'lLWEXRAnQd0',
+  title: '숲속 호수의 섬',
+  credit: '밥 로스 · The Joy of Painting · 시즌 29, 1화'
+};
+const exampleWatchUrl = `https://www.youtube.com/watch?v=${exampleVideo.id}`;
+const exampleBook = [
+  {
+    title: '구도 잡기',
+    sections: [
+      ['수평선', '호수와 하늘 중 어느 쪽을 더 넓게 보여줄지 정하고 수평선을 가볍게 표시해요.'],
+      ['시선의 중심', '섬을 가운데에서 조금 비켜 놓고, 반대쪽에는 여백을 남겨 보세요.']
+    ],
+    prompt: '섬을 왼쪽과 오른쪽에 놓은 작은 스케치를 하나씩 그려 보고 비교해 보세요.'
+  },
+  {
+    title: '하늘의 색 깔기',
+    sections: [
+      ['색 고르기', '옅은 파랑과 흰색을 준비하고, 위쪽은 조금 더 짙고 수평선 쪽은 밝게 남겨요.'],
+      ['붓질', '넓은 붓을 가볍게 좌우로 움직여 색과 색 사이의 경계를 풀어 주세요.']
+    ],
+    prompt: '하늘과 수평선의 명도가 어떻게 달라지는지 살펴보세요.'
+  },
+  {
+    title: '먼 숲에 깊이 주기',
+    sections: [
+      ['색 섞기', '숲의 초록에 회청색을 조금 섞으면 뒤로 멀어져 보이는 차분한 색이 나와요.'],
+      ['경계', '먼 나무는 한 그루씩 그리지 않고, 높낮이가 다른 숲의 윤곽을 덩어리로 잡아요.']
+    ],
+    prompt: '가까운 숲과 먼 숲 중 어느 쪽의 윤곽이 뚜렷한지 비교해 보세요.'
+  },
+  {
+    title: '호수의 밑색 만들기',
+    sections: [
+      ['물의 색', '하늘에 썼던 파랑을 섞어 하늘과 호수의 색이 자연스럽게 이어지게 해요.'],
+      ['붓 방향', '가로로 길게 칠하고, 물가에 가까운 곳에는 다음 단계에서 반사를 넣을 자리를 남겨요.']
+    ],
+    prompt: '가로 붓질만으로 잔잔한 수면을 만들어 보세요.'
+  },
+  {
+    title: '섬의 실루엣 잡기',
+    sections: [
+      ['큰 형태', '짙은 색으로 섬의 덩어리부터 잡고 나무와 바위 자리는 나중에 나눠요.'],
+      ['물가', '가장자리를 직선으로 긋지 않고, 작은 굴곡을 넣어 자연스러운 물가를 만드세요.']
+    ],
+    prompt: '섬의 가장 높은 곳과 가장 낮은 곳을 하나씩 정해 보세요.'
+  },
+  {
+    title: '나무의 어두운 면 쌓기',
+    sections: [
+      ['나무 덩어리', '짙은 녹색으로 수관의 큰 모양을 먼저 찍고, 나무마다 높이를 조금씩 달리해요.'],
+      ['겹침', '가까운 나무가 뒤쪽 나무의 일부를 가리도록 배치하면 깊이가 생겨요.']
+    ],
+    prompt: '앞 나무와 뒤 나무가 겹치는 곳을 한 군데 만들어 보세요.'
+  },
+  {
+    title: '빛 받은 잎 찍기',
+    sections: [
+      ['빛의 방향', '어느 쪽에서 빛이 들어오는지 정하고, 그 방향의 나뭇잎에만 밝은 색을 얹어요.'],
+      ['붓 압력', '붓 끝으로 가볍게 두드리고, 안쪽의 어두운 부분은 남겨 나무의 부피를 보여줘요.']
+    ],
+    prompt: '밝은 잎을 더하기 전과 후에 나무 모양이 어떻게 달라지는지 관찰해 보세요.'
+  },
+  {
+    title: '물에 비친 풍경 그리기',
+    sections: [
+      ['반사 위치', '섬과 나무 바로 아래에 비슷한 색을 놓고, 깨끗한 붓으로 아래쪽을 가볍게 끌어요.'],
+      ['경계 풀기', '그 위를 가로로 살짝 쓸어 실제 나무보다 덜 선명하게 만들어요.']
+    ],
+    prompt: '섬의 경계와 물에 비친 경계 중 어디가 더 또렷한지 비교해 보세요.'
+  },
+  {
+    title: '물결과 물가의 빛 더하기',
+    sections: [
+      ['잔물결', '작은 붓이나 팔레트 나이프로 짧고 가는 가로선을 몇 개만 넣어요.'],
+      ['길이 조절', '먼 물결은 짧고 약하게, 가까운 물결은 조금 길고 또렷하게 표현해 보세요.']
+    ],
+    prompt: '가장 밝은 선을 한두 곳만 남겨 시선이 어디에 머무는지 확인해 보세요.'
+  },
+  {
+    title: '마무리와 돌아보기',
+    sections: [
+      ['거리 두고 보기', '캔버스에서 한 발짝 물러서서 하늘, 숲, 섬, 반사의 순서가 읽히는지 확인해요.'],
+      ['마지막 손질', '섬 주변에서 필요한 명암 한두 군데만 손보고, 수면의 여백은 그대로 남겨요.']
+    ],
+    prompt: '다시 그린다면 구도, 색, 붓질 중 무엇을 바꾸고 싶은지 한 줄로 적어 보세요.'
+  }
+].map((page,index,pages) => ({ ...page, startAt: index/pages.length }));
+
+function canEmbedExample() {
+  return /^(http|https):$/.test(window.location?.protocol || '');
+}
+
+function exampleVideoStage() {
+  const playControl = canEmbedExample()
+    ? '<button type="button" class="example-play" onclick="loadExampleVideo()"><span aria-hidden="true">▶</span> 예시 영상 재생</button>'
+    : `<a class="example-play" href="${exampleWatchUrl}" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> YouTube에서 재생</a>`;
+  return `
+    <div id="stage" class="video-stage example-stage" aria-label="밥 로스 예시 영상">
+      <img class="example-thumbnail" src="https://i.ytimg.com/vi/${exampleVideo.id}/hqdefault.jpg" alt="" onerror="this.hidden=true">
+      <div class="example-overlay">
+        ${label}
+        <p>예시 영상</p>
+        <strong>${exampleVideo.title}</strong>
+        <span>${exampleVideo.credit}</span>
+        ${playControl}
+      </div>
+    </div>`;
+}
+
+let youtubeApiRequest;
+let videoSession;
+
+function loadYouTubeApi() {
+  if (window.YT?.Player) return Promise.resolve(window.YT);
+  if (!youtubeApiRequest) {
+    youtubeApiRequest = new Promise((resolve,reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      let timeout;
+      const release = () => {
+        clearTimeout(timeout);
+        if (window.onYouTubeIframeAPIReady === ready) delete window.onYouTubeIframeAPIReady;
+      };
+      const ready = () => {
+        release();
+        resolve(window.YT);
+      };
+      const fail = () => {
+        release();
+        script.remove();
+        reject(new Error('YouTube IFrame API unavailable'));
+      };
+      window.onYouTubeIframeAPIReady = ready;
+      script.onerror = fail;
+      timeout = setTimeout(fail,10000);
+      document.head.append(script);
+    }).catch(error => {
+      youtubeApiRequest = undefined;
+      throw error;
+    });
+  }
+  return youtubeApiRequest;
+}
+
+function setVideoSyncStatus(text) {
+  const status = document.querySelector('#video-sync-status');
+  if (status && status.textContent !== text) status.textContent = text;
+}
+
+function syncBookToVideo(session) {
+  if (videoSession !== session || !session.ready || !state.book) return;
+  const duration = session.player.getDuration();
+  const time = session.player.getCurrentTime();
+  if (!Number.isFinite(duration) || duration <= 0 || !Number.isFinite(time) || time < 0) return;
+
+  const progress = time/duration;
+  let page = 1;
+  for (let i = 1; i < exampleBook.length; i++) {
+    if (progress >= exampleBook[i].startAt) page = i+1;
+  }
+  if (page === session.cuePage) return;
+  session.cuePage = page;
+  if (state.page === page) return;
+  state.page = page;
+  if (state.book) updatePlayerBook();
+}
+
+function stopBookTracking(session) {
+  clearInterval(session.timer);
+  session.timer = undefined;
+  session.cuePage = undefined;
+}
+
+function refreshBookTracking(session = videoSession) {
+  if (!session?.ready) return;
+  if (!state.book) {
+    stopBookTracking(session);
+    setVideoSyncStatus('책을 펼치면 영상과 교재가 연동됩니다.');
+    return;
+  }
+  setVideoSyncStatus('재생 위치에 맞춰 교재가 넘어갑니다.');
+  syncBookToVideo(session);
+  if (session.timer === undefined) {
+    session.timer = setInterval(() => syncBookToVideo(session),400);
+  }
+}
+
+async function loadExampleVideo() {
+  if (!canEmbedExample() || videoSession) return;
+  const stage = document.querySelector('#stage');
+  const session = { stage, player: null, timer: undefined, ready: false, cuePage: undefined };
+  videoSession = session;
+  setVideoSyncStatus('YouTube 재생 위치 연결 중');
+  const origin = encodeURIComponent(window.location.origin);
+  stage.innerHTML = `<iframe class="example-iframe"
+    src="https://www.youtube-nocookie.com/embed/${exampleVideo.id}?autoplay=1&playsinline=1&enablejsapi=1&origin=${origin}"
+    title="밥 로스 · ${exampleVideo.title}" referrerpolicy="strict-origin-when-cross-origin"
+    allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  const frame = stage.querySelector('iframe');
+  frame.focus({ preventScroll: true });
+  try {
+    const YT = await loadYouTubeApi();
+    if (videoSession !== session || !stage.isConnected) return;
+    session.player = new YT.Player(frame,{
+      events: {
+        onReady: event => {
+          if (videoSession !== session) return;
+          session.player = event.target;
+          session.ready = true;
+          refreshBookTracking(session);
+        },
+        onStateChange: () => syncBookToVideo(session),
+        onError: () => {
+          if (videoSession !== session) return;
+          stopBookTracking(session);
+          session.ready = false;
+          setVideoSyncStatus('내장 재생에 실패했어요. YouTube 원본을 열어 주세요.');
+        }
+      }
+    });
+  } catch {
+    if (videoSession === session) {
+      setVideoSyncStatus('교재 자동 전환에 연결하지 못했어요. 페이지는 직접 넘길 수 있어요.');
+    }
+  }
+}
+
+function disposeExampleVideo() {
+  const session = videoSession;
+  if (!session) return;
+  videoSession = undefined;
+  stopBookTracking(session);
+  session.player?.destroy?.();
+}
+
+function playerBook() {
+  const page = exampleBook[state.page-1];
+  const total = exampleBook.length;
+  return `
+    <div class="book-cover ${state.book ? 'book-is-open' : 'book-is-closed'}"
+         ${state.book ? 'role="region" aria-label="교재 본문" tabindex="0"' : ''}>
+      ${state.book ? `
+        <article class="book-detail">
+          <p class="book-chapter">${state.page}장 · 풍경 유화 실습 노트</p>
+          <h3>${page.title}</h3>
+          <dl>
+            ${page.sections.map(([title,text]) => `<dt>${title}</dt><dd>${text}</dd>`).join('')}
+          </dl>
+          <p class="book-prompt">${page.prompt}</p>
+        </article>` : `
+        <div class="book-jacket">
+          <span>예시 교재</span>
+          <strong>풍경 유화<br>실습 노트</strong>
+          <svg class="book-landscape" viewBox="0 0 240 78" aria-hidden="true" preserveAspectRatio="xMidYMax slice">
+            <path d="M0 50L50 15l30 23L115 5l65 38 35-23 25 25v33H0Z" fill="#888"/>
+            <path d="M0 58l49-17 43 15 55-10 45 16 48-14v30H0Z" fill="#555"/>
+            <path d="M25 67h75m32 4h80" fill="none" stroke="#dedede" stroke-opacity=".75" stroke-linecap="round"/>
+          </svg>
+          <span>호수와 섬 그리기 · ${total}쪽</span>
+        </div>`}
+    </div>
+    <div class="book-toolbar">
+      <button type="button" id="book-toggle" class="primary" aria-expanded="${state.book}" onclick="togglePlayerBook()">
+        ${state.book ? '책 접기' : '책 펼치기'}
+      </button>
+      ${state.book ? `
+        <div class="book-pages" aria-label="교재 페이지">
+          <button type="button" onclick="turnBookPage(-1)" ${state.page===1 ? 'disabled' : ''}>이전</button>
+          <span aria-live="polite">${state.page} / ${total}쪽</span>
+          <button type="button" onclick="turnBookPage(1)" ${state.page===total ? 'disabled' : ''}>다음</button>
+        </div>` : ''}
+    </div>`;
+}
+
+function updatePlayerBook(focusTarget) {
+  const body = document.querySelector('#player-book-content');
+  const focused = body.contains(document.activeElement);
+  body.innerHTML = playerBook();
+  const nextFocus = focusTarget || (focused ? '.book-cover' : null);
+  if (nextFocus) body.querySelector(nextFocus)?.focus({ preventScroll: true });
+}
+
+function togglePlayerBook() {
+  state.book = !state.book;
+  updatePlayerBook('#book-toggle');
+  refreshBookTracking();
+}
+
+function turnBookPage(direction) {
+  const next = state.page+direction;
+  if (!state.book || next < 1 || next > exampleBook.length) return;
+  state.page = next;
+  updatePlayerBook('.book-cover');
+}
+
+function player() {
+  const course = courses[state.selected];
+  return `
+    <div class="player-shell screen">
+      <section class="player-layout" aria-label="강의 플레이어">
+        <div class="video-column">
+          ${exampleVideoStage()}
+          <div class="player-controls extra">
+            ${label}
+            <a href="${exampleWatchUrl}" target="_blank" rel="noopener">YouTube 원본 열기</a>
+            <button type="button" class="primary" onclick="finish()">학습 마치기</button>
+          </div>
+          <article class="video-info">
+            <div class="video-lesson">
+              <span class="eyebrow">선택한 강의</span>
+              <h1>${course.chapter}강 ${course.lesson}</h1>
+              <p>${course.title} · ${course.subject}</p>
+            </div>
+            <button type="button" class="ghost extra" onclick="go('learn')">${label}학습 화면으로</button>
+          </article>
+        </div>
+        <aside class="book-panel" aria-labelledby="book-heading">
+          <header class="book-heading">
+            ${label}
+            <h2 id="book-heading">책</h2>
+          </header>
+          <p class="video-sync-status" id="video-sync-status" role="status">${canEmbedExample() ? '영상을 재생하고 책을 펼치면 페이지가 자동으로 넘어갑니다.' : '웹 주소에서 열면 영상과 교재를 연동할 수 있어요.'}</p>
+          <div id="player-book-content">${playerBook()}</div>
+        </aside>
+      </section>
+    </div>`;
+}
+function render() {
+  app.innerHTML = state.screen === 'home' ? home() : state.screen === 'learn' ? learn() : player();
+  mountModels(app);
+  playStreakIgnition();
+  scheduleQuizAdvance(app.querySelector?.('#quiz-panel'));
+}
+function finish(){
+  if(state.completed.size===0)state.ignitePending=true;
+  state.completed.add(state.selected);
+  if (videoSession) {
+    const stage = videoSession.stage;
+    disposeExampleVideo();
+    stage.outerHTML = exampleVideoStage();
+    setVideoSyncStatus('영상을 재생하고 책을 펼치면 페이지가 자동으로 넘어갑니다.');
+  }
+  modal.innerHTML=`<div class="overlay"><section class="dialog extra" role="dialog" aria-modal="true" aria-labelledby="done">${label}<span class="eyebrow">학습 완료 · 모의 처리</span><h2 id="done">오늘도 한 강, 수고했어요.</h2><p>${courses[state.selected].title}<br>${courses[state.selected].chapter}강 ${courses[state.selected].lesson}</p><p>학습 기록에 완료한 강의를 반영했습니다.</p><button id="return" class="primary" onclick="modal.innerHTML='';state.expanded=false;go('learn')">학습 화면으로</button></section></div>`;document.querySelector('#return').focus()}
+// Models are built from faces with x, y and z coordinates. The canvas
+// projects those faces and sorts them from back to front on every turn.
+const rectangle = (x, y, width, height) => [[x,y], [x+width,y], [x+width,y+height], [x,y+height]];
+const ellipse = (rx, ry) => Array.from({ length: 32 }, (_, i) => {
+  const a = i * Math.PI / 16;
+  return [rx * Math.cos(a), ry * Math.sin(a)];
+});
+const magnet = [[-34,-28],[-19,-28],[-19,8],[-15,16],[-7,20],[7,20],[15,16],[19,8],
+  [19,-28],[34,-28],[34,10],[29,24],[19,33],[8,37],[-8,37],[-19,33],[-29,24],[-34,10]];
+const speech = [[-29,-17],[-24,-23],[20,-23],[28,-17],[28,11],[22,17],
+  [-10,17],[-24,27],[-22,17],[-29,10]];
+const shift = (shape, x, y) => shape.map(([px,py]) => [px+x,py+y]);
+const solid = (shape, z, depth, hue, bevel = .92) => ({ shape, z, depth, hue, bevel });
+
+const models = {
+  book: [
+    solid(rectangle(-32,-42,59,81),-9,3,75,.98),
+    solid(rectangle(-30,-40,55,76),-6,13,224,.98),
+    ...[-4,-1,2,5].map(z => solid(rectangle(21,-38,4,73),z,.5,166,.99)),
+    solid(rectangle(-32,-42,59,81),7,4,90,.98),
+    solid(rectangle(-32,-42,9,81),-9,20,57,.96),
+    solid(rectangle(-16,-24,31,3),11,1,218),
+    solid(rectangle(-16,-17,22,2),11,1,179),
+    solid(shift(ellipse(12,12),2,10),11,1,180)
+  ],
+  math: [
+    solid(ellipse(30,30),-9,18,171),
+    solid([[-24,11],[-24,7],[21,-12],[24,-8]],9,2,63),
+    solid(ellipse(5,5),9,2,75)
+  ],
+  english: [
+    solid(shift(speech,9,12),-9,9,94),
+    solid(shift(speech,-5,-7),0,10,204),
+    ...[-17,-6,5].map(x => solid(shift(ellipse(3,3),x,-9),10,1,78))
+  ],
+  science: [
+    solid(magnet,-9,18,109),
+    solid(rectangle(-34,-28,15,12),9,1,206),
+    solid(rectangle(19,-28,15,12),9,1,206)
+  ]
+};
+const modelViews = new WeakMap();
+
+function facesFor(part) {
+  const { shape, z, depth, hue, bevel } = part;
+  const ring = (position, scale) => shape.map(([x,y]) => [x*scale,y*scale,z+depth*position]);
+  const rings = [ring(0,bevel),ring(.25,1),ring(.75,1),ring(1,bevel)];
+  const faces = [
+    { points: rings[0], hue: hue*.65 },
+    { points: rings.at(-1), hue, front: true }
+  ];
+  for (let level = 0; level < rings.length - 1; level++) {
+    const current = rings[level];
+    const next = rings[level+1];
+    for (let i = 0; i < current.length; i++) {
+      const j = (i+1) % current.length;
+      const angle = i * 2 * Math.PI / current.length;
+      faces.push({ points: [current[i],current[j],next[j],next[i]], hue: hue*(.65+.19*Math.cos(angle-1)) });
+    }
+  }
+  return faces;
+}
+
+function drawModel(host, tiltX = 0, tiltY = 0) {
+  const view = modelViews.get(host);
+  if (!view) return;
+  const { ctx, faces, type } = view;
+  const ax = -.11 + tiltX;
+  const ay = -.44 + tiltY;
+  const cx = Math.cos(ax), sx = Math.sin(ax), cy = Math.cos(ay), sy = Math.sin(ay);
+  const project = ([x,y,z]) => {
+    const horizontal = x*cy + z*sy;
+    const depth = z*cy - x*sy;
+    const vertical = y*cx - depth*sx;
+    const rotatedZ = y*sx + depth*cx;
+    const scale = 225 / (225 - rotatedZ);
+    return [60+horizontal*scale, 59+vertical*scale, rotatedZ];
+  };
+  const projected = faces.map(face => {
+    const points = face.points.map(project);
+    return { ...face, points, depth: points.reduce((sum, p) => sum+p[2], 0)/points.length };
+  }).sort((a,b) => a.depth-b.depth);
+
+  ctx.clearRect(0,0,120,120);
+  for (const { points, hue, front } of projected) {
+    ctx.beginPath();
+    points.forEach(([x,y], i) => i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y));
+    ctx.closePath();
+    const gray = value => {
+      const channel = Math.min(255,Math.round(value));
+      return `rgb(${channel},${channel},${channel})`;
+    };
+    if (front) {
+      const light = ctx.createLinearGradient(29,21,87,104);
+      light.addColorStop(0,gray(hue*1.36));
+      light.addColorStop(.52,gray(hue));
+      light.addColorStop(1,gray(hue*.73));
+      ctx.fillStyle = light;
+    } else {
+      ctx.fillStyle = gray(hue);
+    }
+    ctx.strokeStyle = ctx.fillStyle;
+    ctx.lineWidth = .55;
+    ctx.stroke();
+    ctx.fill();
+  }
+  if (type === 'book' && ay > -1.1 && ay < .85) {
+    const [x,y] = project([-15,1,12]);
+    ctx.font = 'bold 9px sans-serif';
+    ctx.fillStyle = '#ededed';
+    ctx.fillText(host.dataset.cover || '중학',x,y);
+  }
+}
+
+function mountModels(root) {
+  root.querySelectorAll?.('[data-model]').forEach(host => {
+    const type = host.dataset.model;
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 240;
+    canvas.setAttribute('aria-hidden','true');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.scale(2,2);
+    const faces = models[type].flatMap(facesFor);
+    modelViews.set(host,{ ctx, type, faces });
+    host.classList.add('mesh-host');
+    host.append(canvas);
+    drawModel(host);
+  });
+}
+
+let audioContext;
+let flameDrag;
+let tiltedAsset;
+const fallingFlames = new WeakSet();
+const flamePoses = new WeakMap();
+const flamePreviews = new WeakMap();
+const handledOnRelease = new WeakSet();
+
+function prepareFlameSound() {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) return;
+  try {
+    audioContext ??= new AudioContext();
+    if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+  } catch {
+    // The visual interaction still works without audio.
+  }
+}
+
+function playFlameImpact() {
+  if (audioContext?.state !== 'running') return;
+  const now = audioContext.currentTime;
+  const partials = [
+    [790, .07, .22], [1268, .035, .16], [2053, .023, .09], [3247, .012, .044]
+  ];
+  for (const [frequency, volume, decay] of partials) {
+    const tone = audioContext.createOscillator();
+    const envelope = audioContext.createGain();
+    tone.frequency.value = frequency;
+    envelope.gain.setValueAtTime(.0001, now);
+    envelope.gain.exponentialRampToValueAtTime(volume, now + .002);
+    envelope.gain.exponentialRampToValueAtTime(.0001, now + decay);
+    tone.connect(envelope).connect(audioContext.destination);
+    tone.start(now);
+    tone.stop(now + decay + .01);
+  }
+}
+
+function easeProgress(value) {
+  const clamped = Math.max(0,Math.min(1,value));
+  return clamped*clamped*(3-2*clamped);
+}
+
+function updateFlameIllustration(flame,{ shell, ember, bend = 0, ripple = 0 }) {
+  if (shell !== undefined) flame.style.setProperty('--shell-heat',shell);
+  if (ember !== undefined) flame.style.setProperty('--ember-heat',ember);
+  flame.style.setProperty('--flame-tip-bend',`${bend*6}deg`);
+  flame.style.setProperty('--flame-tip-stretch',1+ripple*.045);
+}
+
+function playStreakIgnition() {
+  if (!state.ignitePending || state.screen !== 'learn' || state.expanded) return;
+  const callout = app.querySelector?.('.streak-callout');
+  const counter = app.querySelector?.('#streak-days');
+  if (!callout || !counter) return;
+  state.ignitePending = false;
+
+  const art = callout.querySelector('.streak-art');
+  const flame = art.querySelector('.streak-flame');
+  callout.setAttribute('data-igniting','');
+  counter.innerHTML = '<span class="streak-roll" aria-hidden="true"><span class="streak-roll-window"><span class="streak-roll-wheel"><span>0</span><span>1</span></span></span>일</span>';
+  const wheel = counter.querySelector('.streak-roll-wheel');
+  updateFlameIllustration(flame,{ shell: 0, ember: 0 });
+  art.style.setProperty('--flame-glow','0');
+  let start;
+  function ignite(now) {
+    if (!callout.isConnected) return;
+    start ??= now;
+    const elapsed = now-start;
+    const ember = easeProgress(elapsed/320);
+    const shell = easeProgress((elapsed-180)/490);
+    const roll = easeProgress((elapsed-580)/400);
+    const ripple = Math.sin(Math.PI*shell)*.85;
+    updateFlameIllustration(flame,{ shell, ember, ripple });
+    art.style.setProperty('--flame-glow',String(shell));
+    wheel.style.setProperty('--day-roll',`${-50*roll}%`);
+    if (elapsed < 980) {
+      requestAnimationFrame(ignite);
+    } else {
+      callout.removeAttribute('data-igniting');
+      art.style.removeProperty('--flame-glow');
+      counter.textContent = '1일';
+    }
+  }
+  requestAnimationFrame(ignite);
+}
+
+function easeFlamePose(art, pitch, yaw) {
+  let pose = flamePoses.get(art);
+  if (!pose) {
+    pose = { x: 0, y: 0, targetX: 0, targetY: 0, frame: null };
+    flamePoses.set(art, pose);
+  }
+  pose.targetX = pitch;
+  pose.targetY = yaw;
+  if (pose.frame !== null) return;
+  const flame = art.querySelector('.streak-flame');
+  function step() {
+    pose.frame = null;
+    if (!art.isConnected) return;
+    pose.x += (pose.targetX - pose.x) * .29;
+    pose.y += (pose.targetY - pose.y) * .29;
+    const settled = Math.abs(pose.targetX - pose.x) < .003 && Math.abs(pose.targetY - pose.y) < .003;
+    if (settled) {
+      pose.x = pose.targetX;
+      pose.y = pose.targetY;
+    }
+    if (!art.closest('[data-igniting]')) updateFlameIllustration(flame,{ bend: pose.y, ripple: pose.x });
+    if (!settled) pose.frame = requestAnimationFrame(step);
+  }
+  pose.frame = requestAnimationFrame(step);
+}
+
+function clearTilt() {
+  if (!tiltedAsset) return;
+  for (const property of ['--tilt-x', '--tilt-y', '--sway']) {
+    tiltedAsset.style.removeProperty(property);
+  }
+  if (tiltedAsset.matches('.streak-art')) easeFlamePose(tiltedAsset, 0, 0);
+  else drawModel(tiltedAsset);
+  tiltedAsset = null;
+}
+
+function trackAsset(event) {
+  if (flameDrag && flameDrag.id === event.pointerId) {
+    flameDrag.lift = Math.max(0, Math.min(55, flameDrag.startY - event.clientY));
+    flameDrag.art.style.setProperty('--lift', `-${flameDrag.lift}px`);
+    return;
+  }
+  if (event.pointerType === 'touch') return;
+  const flame = event.target.closest('.streak-art');
+  const card = event.target.closest('.lecture-card');
+  const asset = flame || card?.querySelector('.course-art');
+  if (asset !== tiltedAsset) clearTilt();
+  if (!asset || fallingFlames.has(asset) || flame?.closest('[data-igniting]')) return;
+  tiltedAsset = asset;
+  const bounds = (flame || card).getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width - .5;
+  const y = (event.clientY - bounds.top) / bounds.height - .5;
+  if (flame) {
+    easeFlamePose(flame, .5-y*.24, x*1.5);
+  } else {
+    asset.style.setProperty('--tilt-x', `${-y * 22}deg`);
+    asset.style.setProperty('--tilt-y', `${x * 27}deg`);
+    drawModel(asset, -y*.6, x*1.35);
+  }
+}
+
+function showFlameHover(event) {
+  if (event.pointerType !== 'touch') event.currentTarget.setAttribute('data-hovering','');
+}
+
+function activateFlame(art) {
+  if (!handledOnRelease.delete(art)) previewFlame(art);
+}
+
+function previewFlame(art) {
+  const callout = art.closest('.streak-callout');
+  if (!callout || fallingFlames.has(art) || callout.hasAttribute('data-igniting')) return;
+  flamePreviews.get(art)?.cancel();
+  const status = callout.querySelector('.streak-hint');
+  const body = art.querySelector('.flame-body');
+  const hint = status.textContent;
+  const duration = 620;
+  art.setAttribute('data-previewing','');
+  status.textContent = '불꽃이 움직이는 중';
+  body.style.transform = 'translateY(-8px)';
+
+  let startedAt;
+  let request;
+  function stop() {
+    cancelAnimationFrame(request);
+    flamePreviews.delete(art);
+    art.removeAttribute('data-previewing');
+    body.style.removeProperty('transform');
+    status.textContent = hint;
+  }
+  function tick(now) {
+    if (!art.isConnected) {
+      stop();
+      return;
+    }
+    startedAt ??= now;
+    const progress = (now-startedAt)/duration;
+    if (progress >= 1) {
+      stop();
+      return;
+    }
+    const hop = Math.sin(Math.PI*progress) ** 1.3;
+    body.style.transform = `translateY(${-21*hop}px) rotate(${-5*hop}deg)`;
+    request = requestAnimationFrame(tick);
+  }
+  flamePreviews.set(art,{ cancel: stop });
+  request = requestAnimationFrame(tick);
+}
+
+async function dropFlame(art, lift) {
+  const body = art.querySelector('.flame-body');
+  art.style.removeProperty('--lift');
+  if (lift < 6) return;
+  if (!body.animate) {
+    playFlameImpact();
+    return;
+  }
+  fallingFlames.add(art);
+  art.setAttribute('data-falling', '');
+  try {
+    await body.animate(
+      [{ transform: `translateY(-${lift}px)` }, { transform: 'translateY(0)' }],
+      { duration: 110 + lift * 1.4, easing: 'cubic-bezier(.55,.04,.92,.58)' }
+    ).finished;
+    if (!art.isConnected) return;
+    playFlameImpact();
+    await body.animate(
+      [{ transform: 'scale(1.04,.95)' }, { transform: 'translateY(-2px) rotate(-2deg)' }, { transform: 'none' }],
+      { duration: 245, easing: 'ease-out' }
+    ).finished;
+  } finally {
+    art.removeAttribute('data-falling');
+    fallingFlames.delete(art);
+  }
+}
+
+document.addEventListener('pointerdown', event => {
+  if (event.button !== 0 || flameDrag) return;
+  const art = event.target.closest('.streak-callout[data-lit="false"] .streak-art');
+  if (!art || fallingFlames.has(art)) return;
+  handledOnRelease.delete(art);
+  flamePreviews.get(art)?.cancel();
+  prepareFlameSound();
+  clearTilt();
+  art.focus({ preventScroll: true });
+  art.setPointerCapture(event.pointerId);
+  art.setAttribute('data-grabbing', '');
+  flameDrag = { id: event.pointerId, art, startY: event.clientY, lift: 0 };
+});
+document.addEventListener('pointerover', event => {
+  if (!flameDrag && event.target.closest('.streak-art')) trackAsset(event);
+});
+document.addEventListener('pointermove', trackAsset);
+document.addEventListener('pointerout', event => {
+  if (!event.relatedTarget || (tiltedAsset?.matches('.streak-art') && !tiltedAsset.contains(event.relatedTarget))) clearTilt();
+});
+function endFlameDrag(event) {
+  if (!flameDrag || flameDrag.id !== event.pointerId) return;
+  const { art, lift } = flameDrag;
+  flameDrag = null;
+  art.removeAttribute('data-grabbing');
+  if (event.type !== 'pointerup') {
+    art.style.removeProperty('--lift');
+    return;
+  }
+  handledOnRelease.add(art);
+  setTimeout(() => handledOnRelease.delete(art),0);
+  if (lift >= 6) {
+    dropFlame(art, lift).catch(() => {});
+  } else {
+    art.style.removeProperty('--lift');
+    previewFlame(art);
+  }
+}
+document.addEventListener('pointerup', endFlameDrag);
+document.addEventListener('pointercancel', endFlameDrag);
+document.addEventListener('lostpointercapture', endFlameDrag);
+
+document.addEventListener('keydown',e=>{
+  if (e.key === 'Escape' && state.screen === 'learn' && state.expanded) {
+    toggleList();
+    document.querySelector('#courseToggle').focus();
+  }
+  if(!modal.firstChild)return;if(e.key==='Tab'){e.preventDefault();document.querySelector('#return').focus()}});
+render();
+</script>
+</body>
+</html>
