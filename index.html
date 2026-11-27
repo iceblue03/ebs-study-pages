@@ -515,6 +515,54 @@ html { scrollbar-gutter: stable; }
   .book-panel { border-left: 0; border-top: 1px solid #bbb; }
   .book-cover { min-height: 220px; }
 }
+
+.home-shell .brand { transition: margin-bottom .34s ease; }
+.home-shell .content-row { transition: margin-bottom .34s ease; }
+.home-shell[data-shortcut-open] .brand { margin-bottom: 24px; }
+.home-shell[data-shortcut-open] .content-row { margin-bottom: 26px; }
+.home-shell .home-bottom {
+  --shortcut-width: 29%;
+  grid-template-columns: minmax(0,1fr) minmax(0,var(--shortcut-width));
+  gap: clamp(12px,3vw,44px);
+  transition: grid-template-columns .34s cubic-bezier(.2,.75,.3,1);
+}
+.home-shell[data-shortcut-open="schedule"] .home-bottom { --shortcut-width: 54%; }
+.home-shell[data-shortcut-open="programs"] .home-bottom { --shortcut-width: 59%; }
+.home-shell[data-shortcut-open="lessons"] .home-bottom { --shortcut-width: 49%; }
+.shortcut-menu { display: grid; gap: 6px; border-radius: 10px; padding: 10px; }
+.shortcut-menu .extra-label { margin: 0 0 2px; }
+.home-shell[data-shortcut-open] .shortcut-menu { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.home-shell[data-shortcut-open] .shortcut-menu .extra-label { grid-column: 1 / -1; }
+.shortcuts .shortcut-key, .shortcuts .shortcut-action {
+  width: 100%; min-height: 40px; padding: 8px 10px; border: 1px solid #ccc;
+  border-radius: 8px; text-align: left; line-height: 1.25; font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center; gap: 6px;
+}
+.shortcuts .shortcut-key[aria-expanded="true"] { background: #292929; border-color: #292929; color: #fff; }
+.shortcut-key::after { content: '+'; font-size: 16px; }
+.shortcut-key[aria-expanded="true"]::after { content: '−'; }
+.shortcut-detail { margin-top: 16px; padding-top: 15px; border-top: 1px solid #ddd; }
+.shortcut-detail > div { animation: shortcut-appear .3s .07s ease-out both; }
+@keyframes shortcut-appear { from { opacity: 0; translate: 0 5px; } to { opacity: 1; translate: 0 0; } }
+.shortcut-detail h2 { margin: 0 0 8px; font-size: 19px; }
+.shortcut-detail p { margin: 5px 0; font-size: 13px; line-height: 1.55; color: #626262; }
+.shortcut-days { display: flex; gap: 6px; margin: 12px 0 4px; }
+.shortcuts .shortcut-days button { border: 1px solid #ccc; border-radius: 20px; padding: 6px 12px; font-size: 13px; }
+.shortcuts .shortcut-days [aria-pressed="true"] { background: #303030; color: #fff; }
+.shortcut-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+.shortcut-table th, .shortcut-table td { border-bottom: 1px solid #e7e7e7; padding: 8px 4px; line-height: 1.4; }
+.shortcut-table td:first-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.shortcut-programs { display: grid; gap: 5px; }
+.shortcut-programs article { padding: 7px 1px; border-bottom: 1px solid #eee; }
+.shortcut-programs span, .shortcut-action small { display: block; color: #636363; font-size: 12px; }
+.shortcut-lessons { display: grid; gap: 7px; margin-top: 10px; }
+.shortcut-action small { margin-top: 3px; }
+@media (max-width:700px) {
+  .home-shell .home-bottom { grid-template-columns: minmax(0,1fr); }
+  .home-shell .home-bottom .banner { min-height: 145px; }
+  .home-shell[data-shortcut-open] .brand { margin-bottom: 24px; }
+  .shortcuts .shortcut-key { font-size: 12px; padding-inline: 6px; }
+}
 </style>
 </head>
 <body>
@@ -551,7 +599,61 @@ function homeMediaCards() {
     </button>`).join('');
 }
 
-function home(){return `<div class="shell screen">${logo()}<section class="home-top" aria-label="콘텐츠"><div class="content-row extra">${label}<style>.content-row>.extra-label{position:absolute;top:-22px;left:0}</style><button class="content-card" onclick="go('learn')"><span class="card-symbol" aria-hidden="true">▤</span><span>학습</span></button>${homeMediaCards()}</div></section><section class="home-bottom"><div class="banner placeholder" role="img" aria-label="배너 이미지 자리"></div><aside class="shortcuts"><h1 class="block-title">바로가기</h1><div class="extra" style="padding:10px">${label}<button onclick="toast()">편성표</button><button onclick="toast()">방송 프로그램</button><button onclick="go('learn')">강의 학습</button></div></aside></section></div>`}
+const shortcutLabels = { schedule: '편성표', programs: '방송 프로그램', lessons: '강의 학습' };
+const sampleSchedule = [
+  [['08:30',0],['11:10',4],['16:20',2],['20:00',3]],
+  [['09:00',4],['13:30',3],['17:50',0],['21:20',1]]
+];
+
+function shortcutContent(menu, day = 0) {
+  if (menu === 'schedule') return `<div><h2>예시 편성표</h2><p>시간대별 방송 프로그램을 확인해 보세요.</p>
+    <div class="shortcut-days" role="group" aria-label="편성 날짜">${['오늘','내일'].map((name,index) => `<button type="button" aria-pressed="${day === index}" onclick="showShortcutDay(${index},this)">${name}</button>`).join('')}</div>
+    <table class="shortcut-table"><thead><tr><th scope="col">시간</th><th scope="col">프로그램</th><th scope="col">분류</th></tr></thead>
+    <tbody>${sampleSchedule[day].map(([time,index]) => `<tr><td>${time}</td><td>${homeMedia[index].title}</td><td>${homeMedia[index].category}</td></tr>`).join('')}</tbody></table></div>`;
+  if (menu === 'programs') return `<div><h2>방송 프로그램</h2><div class="shortcut-programs">${homeMedia.map(item =>
+    `<article><span>${item.category}</span><strong>${item.title}</strong><p>${item.description}</p></article>`).join('')}</div></div>`;
+  if (menu === 'lessons') return `<div><h2>강의 학습</h2><p>과목을 선택해 학습 화면을 열어요.</p><div class="shortcut-lessons">${courses.map((course,index) =>
+    `<button class="shortcut-action" type="button" onclick="selectCourse(${index});go('learn')"><span>${course.title}<small>${course.subject} · ${course.chapter}강</small></span><span aria-hidden="true">›</span></button>`).join('')}</div></div>`;
+  return '';
+}
+
+function toggleShortcut(key, button) {
+  const shell = button.closest('.home-shell');
+  const panel = shell.querySelector('#shortcut-detail');
+  const opening = shell.dataset.shortcutOpen !== key;
+  if (opening) shell.dataset.shortcutOpen = key;
+  else delete shell.dataset.shortcutOpen;
+  shell.querySelectorAll('.shortcut-key').forEach(item =>
+    item.setAttribute('aria-expanded',String(opening && item === button)));
+  panel.innerHTML = opening ? shortcutContent(key) : '';
+  panel.hidden = !opening;
+}
+
+function showShortcutDay(day, button) {
+  const panel = button.closest('#shortcut-detail');
+  panel.innerHTML = shortcutContent('schedule',day);
+  panel.querySelector('.shortcut-days [aria-pressed="true"]').focus({ preventScroll: true });
+}
+
+function home() {
+  return `<div class="shell screen home-shell">${logo()}
+    <section class="home-top" aria-label="콘텐츠">
+      <div class="content-row extra">${label}<style>.content-row>.extra-label{position:absolute;top:-22px;left:0}</style>
+        <button class="content-card" onclick="go('learn')"><span class="card-symbol" aria-hidden="true">▤</span><span>학습</span></button>
+        ${homeMediaCards()}
+      </div>
+    </section>
+    <section class="home-bottom">
+      <div class="banner placeholder" role="img" aria-label="배너 이미지 자리"></div>
+      <aside class="shortcuts">
+        <h1 class="block-title">바로가기</h1>
+        <div class="shortcut-menu extra">${label}${Object.entries(shortcutLabels).map(([key,name]) =>
+          `<button type="button" class="shortcut-key" aria-controls="shortcut-detail" aria-expanded="false" onclick="toggleShortcut('${key}',this)">${name}</button>`).join('')}</div>
+        <section class="shortcut-detail" id="shortcut-detail" aria-label="바로가기 상세" hidden></section>
+      </aside>
+    </section></div>`;
+}
+
 function courseCards(index, inPanel = false, reversed = false) {
   const course = courses[index];
   const object = ['math', 'english', 'science'][index];
