@@ -1020,9 +1020,15 @@ function syncBookToVideo(session) {
   if (videoSession !== session || !session.ready || !state.book) return;
   const duration = session.player.getDuration();
   const time = session.player.getCurrentTime();
-  if (!Number.isFinite(duration) || duration <= 0 || !Number.isFinite(time) || time < 0) return;
+  // Ignore ad clips and transient zeroes while the full lesson is interrupted.
+  const videoUrl = session.player.getVideoUrl?.();
+  if (!Number.isFinite(duration) || duration < 1200 || !Number.isFinite(time) || time < 0 ||
+      (videoUrl && !videoUrl.includes(exampleVideo.id))) return;
+  session.contentDuration ??= duration;
+  if (Math.abs(duration-session.contentDuration) > 2 ||
+      (session.cuePage > 1 && time <= .25)) return;
 
-  const progress = time/duration;
+  const progress = time/session.contentDuration;
   let page = 1;
   for (let i = 1; i < exampleBook.length; i++) {
     if (progress >= exampleBook[i].startAt) page = i+1;
